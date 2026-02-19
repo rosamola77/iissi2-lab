@@ -1,0 +1,70 @@
+{
+    "getAll": {
+        "description": "Gets all entries from 'users'",
+        "route": "/users",
+        "method": "GET",
+        "sql": "SELECT * FROM users",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "getById": {
+        "description": "Gets an entry from 'users' by its primary key",
+        "route": "/users/$userId",
+        "method": "GET",
+        "sql": "SELECT * FROM users WHERE userId = $userId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "create": {
+        "description": "Creates a new entry in 'users'",
+        "route": "/users",
+        "method": "POST",
+        "sql": "INSERT INTO users (firstName, lastName, telephone, email, username, password, avatarUrl) VALUES ($firstName, $lastName, $telephone, $email, $username, $password, $avatarUrl)",
+        "request_body_params": [
+            "firstName",
+            "lastName",
+            "telephone",
+            "email",
+            "username",
+            "password",
+            "avatarUrl"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "update": {
+        "description": "Updates an existing entry in 'users' by its primary key",
+        "route": "/users/$userId",
+        "method": "PUT",
+        "sql": "UPDATE users SET firstName = $firstName, lastName = $lastName, telephone = $telephone, email = $email, username = $username, password = $password, avatarUrl = $avatarUrl WHERE userId = $userId",
+        "request_body_params": [
+            "firstName",
+            "lastName",
+            "telephone",
+            "email",
+            "username",
+            "password",
+            "avatarUrl"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "delete": {
+        "description": "Deletes an existing entry in 'users' by its primary key",
+        "route": "/users/$userId",
+        "method": "DELETE",
+        "sql": "DELETE FROM users WHERE userId = $userId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    }
+}

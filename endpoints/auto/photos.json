@@ -1,0 +1,68 @@
+{
+    "getAll": {
+        "description": "Gets all entries from 'photos'",
+        "route": "/photos",
+        "method": "GET",
+        "sql": "SELECT * FROM photos",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "getById": {
+        "description": "Gets an entry from 'photos' by its primary key",
+        "route": "/photos/$photoId",
+        "method": "GET",
+        "sql": "SELECT * FROM photos WHERE photoId = $photoId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "create": {
+        "description": "Creates a new entry in 'photos'",
+        "route": "/photos",
+        "method": "POST",
+        "sql": "INSERT INTO photos (title, description, date, url, visibility, userId) VALUES ($title, $description, $date, $url, $visibility, $userId)",
+        "request_body_params": [
+            "title",
+            "description",
+            "date",
+            "url",
+            "visibility",
+            "userId"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "update": {
+        "description": "Updates an existing entry in 'photos' by its primary key",
+        "route": "/photos/$photoId",
+        "method": "PUT",
+        "sql": "UPDATE photos SET title = $title, description = $description, date = $date, url = $url, visibility = $visibility, userId = $userId WHERE photoId = $photoId",
+        "request_body_params": [
+            "title",
+            "description",
+            "date",
+            "url",
+            "visibility",
+            "userId"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "delete": {
+        "description": "Deletes an existing entry in 'photos' by its primary key",
+        "route": "/photos/$photoId",
+        "method": "DELETE",
+        "sql": "DELETE FROM photos WHERE photoId = $photoId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    }
+}

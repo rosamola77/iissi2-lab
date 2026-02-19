@@ -1,0 +1,64 @@
+{
+    "getAll": {
+        "description": "Gets all entries from 'comments'",
+        "route": "/comments",
+        "method": "GET",
+        "sql": "SELECT * FROM comments",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "getById": {
+        "description": "Gets an entry from 'comments' by its primary key",
+        "route": "/comments/$commentId",
+        "method": "GET",
+        "sql": "SELECT * FROM comments WHERE commentId = $commentId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "create": {
+        "description": "Creates a new entry in 'comments'",
+        "route": "/comments",
+        "method": "POST",
+        "sql": "INSERT INTO comments (text, date, userId, photoId) VALUES ($text, $date, $userId, $photoId)",
+        "request_body_params": [
+            "text",
+            "date",
+            "userId",
+            "photoId"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "update": {
+        "description": "Updates an existing entry in 'comments' by its primary key",
+        "route": "/comments/$commentId",
+        "method": "PUT",
+        "sql": "UPDATE comments SET text = $text, date = $date, userId = $userId, photoId = $photoId WHERE commentId = $commentId",
+        "request_body_params": [
+            "text",
+            "date",
+            "userId",
+            "photoId"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "delete": {
+        "description": "Deletes an existing entry in 'comments' by its primary key",
+        "route": "/comments/$commentId",
+        "method": "DELETE",
+        "sql": "DELETE FROM comments WHERE commentId = $commentId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    }
+}

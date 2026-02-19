@@ -1,0 +1,58 @@
+{
+    "getAll": {
+        "description": "Gets all entries from 'tags'",
+        "route": "/tags",
+        "method": "GET",
+        "sql": "SELECT * FROM tags",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "getById": {
+        "description": "Gets an entry from 'tags' by its primary key",
+        "route": "/tags/$tagId",
+        "method": "GET",
+        "sql": "SELECT * FROM tags WHERE tagId = $tagId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "create": {
+        "description": "Creates a new entry in 'tags'",
+        "route": "/tags",
+        "method": "POST",
+        "sql": "INSERT INTO tags (name) VALUES ($name)",
+        "request_body_params": [
+            "name"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "update": {
+        "description": "Updates an existing entry in 'tags' by its primary key",
+        "route": "/tags/$tagId",
+        "method": "PUT",
+        "sql": "UPDATE tags SET name = $name WHERE tagId = $tagId",
+        "request_body_params": [
+            "name"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "delete": {
+        "description": "Deletes an existing entry in 'tags' by its primary key",
+        "route": "/tags/$tagId",
+        "method": "DELETE",
+        "sql": "DELETE FROM tags WHERE tagId = $tagId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    }
+}

@@ -9,8 +9,8 @@ DEBUG_ENABLED = False
 DB_CONN = {
     "host": "127.0.0.1",
     "port": 3306,
-    "username": "iissi_user",
-    "password": "iissi$user",
+    "username": "issi_user_gallery",
+    "password": "1234",
     "database": "gallery",
 }
 
@@ -26,7 +26,7 @@ SQL_SCRIPTS = [
 HTTP_PORT = 8080
 
 # The URL prefix for all API endpoints
-API_PREFIX = "/api/v1"
+API_PREFIX = "/api/efn"
 
 # Table and fields that are used for both login and register
 USER_AUTH_DATA = {
@@ -37,4 +37,4 @@ USER_AUTH_DATA = {
 
 # A random string that is used for security purposes
 # (this has been generated automatically upon project creation)
-SECRET_KEY = "Replace with your own key"
+SECRET_KEY = "JJEFNEFNEFNJJJJ"
