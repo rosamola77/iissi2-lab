@@ -9,19 +9,22 @@
 <body>
     <p><a href="index.html">Home</a>    <a href="login.html">Login</a></p>
     <div>
-        <form action="/" method="get">
-            <div>
-                <input type="text" name="Nombre" id="firstName" placeholder="Nombre" required>
-            </div>
-            <div>
-                <input type="text" name="Apellidos" id="lastName" placeholder="Apellidos" required>
-            </div>
-            <div>
-                <input type="email" name="email" id="email" placeholder="E-Mail" required>
-            </div>
-            <div>
-                <input type="password" name="password" id="password" placeholder="Contraseña" required>
-            </div>
+        <form action="/index.html" method="get">
+            <fieldset>
+                <div>
+                    <input type="text" name="Nombre" id="firstName" placeholder="Nombre" required>
+                </div>
+                <div>
+                    <input type="text" name="Apellidos" id="lastName" placeholder="Apellidos" required>
+                </div>
+                <div>
+                    <input type="email" name="email" id="email" placeholder="E-Mail" required>
+                </div>
+                <div>
+                    <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                </div>
+            </fieldset>
+            <input type="submit" value="Enviar">
         </form>
     </div>
 </body>
