@@ -1,94 +1,103 @@
-input, select {
-    background-color: #444444;
-    border-color: #676767;
-    color: white;
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.04); }
 }
 
-.input-group > label {
-    display: inline-block;
-    width: 200px;
-    text-align: right;
+.fade-in-up   { animation: fadeInUp .6s ease both; }
+.fade-in       { animation: fadeIn .5s ease both; }
+.slide-in-left { animation: slideInLeft .5s ease both; }
+
+/* stagger cards */
+.gallery-card:nth-child(1)  { animation-delay: .05s; }
+.gallery-card:nth-child(2)  { animation-delay: .10s; }
+.gallery-card:nth-child(3)  { animation-delay: .15s; }
+.gallery-card:nth-child(4)  { animation-delay: .20s; }
+.gallery-card:nth-child(5)  { animation-delay: .25s; }
+.gallery-card:nth-child(6)  { animation-delay: .30s; }
+.gallery-card:nth-child(7)  { animation-delay: .35s; }
+.gallery-card:nth-child(8)  { animation-delay: .40s; }
+.gallery-card:nth-child(9)  { animation-delay: .45s; }
+.gallery-card:nth-child(10) { animation-delay: .50s; }
+
+/* ===== Card hover effect ===== */
+.gallery-card .card {
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+.gallery-card .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.45);
 }
 
-.input-group {
-    margin-bottom: 0.5em;
+/* ===== Photo image inside card ===== */
+.photo-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
 }
 
-img.photo-image {
-    width: 95%;
-    height: auto;
-}
-
-.gallery-container {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-}
-
-body.dark {
-    background-color: rgb(35, 35, 35);
-}
-
-.text, .photo-description {
-    font-family: Arial, Helvetica, sans-serif;
-    color: whitesmoke;
-}
-
-div.photo-block {
+/* ===== Title block (header) ===== */
+.title-block {
     text-align: center;
-    border: 1px solid gray;
-    border-radius: 25px;
+    padding: 1.5rem 0 .5rem;
 }
-
-div.photo-title {
-    font-size: 140%;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: underline;
-}
-
-div.photo-score {
-    font-size: 130%;
-    font-family: monospace;
-}
-
-div.title-block {
-  text-align: center;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  background-color: #333333;
-}
-
-div.navigation > a {
-    color: white;
-    font-size: 120%;
-    background-color: #555555;
-    font-family: monospace;
-    text-decoration: none;
-    display: inline-block;
-    min-width: 150px;
-}
-
-div.center-form {
-    display: block;
-    margin-left: 10%;
-    margin-right: 50%;
-}
-
-button[type="submit"] {
-    margin-top: 3%;
-}
-
 #title {
-  font-size: 300%;
-  text-decoration: none;
-  color: #BBBBBB;
-  font-family: sans-serif;
-  margin-bottom: 0;
+    font-size: 2.5rem;
+    color: #e0e0e0;
+    margin-bottom: 0;
+}
+#subtitle {
+    font-size: 1rem;
+    font-style: italic;
+    color: #aaa;
+    font-family: monospace;
 }
 
-#subtitle {
-  font-size: 120%;
-  font-style: italic;
-  color: #BBBBBB;
-  font-family: monospace;
+/* ===== Navbar brand glow ===== */
+.navbar-brand {
+    transition: text-shadow .3s ease;
+}
+.navbar-brand:hover {
+    text-shadow: 0 0 8px rgba(13,110,253,.6);
+}
+
+/* ===== Form card for auth pages ===== */
+.auth-card {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* ===== Score badge pulse on hover ===== */
+.badge-score:hover {
+    animation: pulse .6s ease;
+}
+
+/* ===== User avatar circle ===== */
+.avatar-sm {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+}
+
+/* ===== Smooth page entrance ===== */
+main {
+    animation: fadeIn .4s ease both;
+}
+
+/* ===== Footer ===== */
+footer a:hover {
+    color: #6ea8fe !important;
 }
 

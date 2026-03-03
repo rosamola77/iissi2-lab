@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es-ES" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery - Trending Users</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/js/libs/bootstrap.min.js"></script>
+    <script src="js/utils/include.js"></script>
+</head>
+<body class="bg-dark text-light min-vh-100 d-flex flex-column">
+
+    <div id="page-header"></div>
+
+    <main class="container py-4 flex-grow-1">
+        <h2 class="fw-bold mb-4 fade-in-up">
+            <i class="fa fa-star text-warning me-2"></i>Trending Users
+        </h2>
+
+        <div id="errors"></div>
+
+        <div id="trending-users" class="row g-4">
+            <!-- Rendered dynamically by JS; fallback cards below -->
+
+            <div class="col-md-6 col-lg-4 gallery-card fade-in-up">
+                <div class="card bg-dark border-secondary h-100">
+                    <div class="card-body text-center">
+                        <img src="https://github.eii.us.es/avatars/u/22?s=460"
+                             class="rounded-circle avatar-sm mb-3" alt="agu"
+                             style="width:80px;height:80px;">
+                        <h5 class="card-title">agu</h5>
+                        <p class="card-text text-secondary">Agustín Borrego</p>
+                        <span class="badge bg-info"><i class="fa fa-picture-o me-1"></i>3 photos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 gallery-card fade-in-up">
+                <div class="card bg-dark border-secondary h-100">
+                    <div class="card-body text-center">
+                        <img src="https://github.eii.us.es/avatars/u/32?s=460"
+                             class="rounded-circle avatar-sm mb-3" alt="druiz"
+                             style="width:80px;height:80px;">
+                        <h5 class="card-title">druiz</h5>
+                        <p class="card-text text-secondary">David Ruiz</p>
+                        <span class="badge bg-info"><i class="fa fa-picture-o me-1"></i>4 photos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 gallery-card fade-in-up">
+                <div class="card bg-dark border-secondary h-100">
+                    <div class="card-body text-center">
+                        <img src="https://github.eii.us.es/avatars/u/38?s=460"
+                             class="rounded-circle avatar-sm mb-3" alt="inma"
+                             style="width:80px;height:80px;">
+                        <h5 class="card-title">inma</h5>
+                        <p class="card-text text-secondary">Inma Hernández</p>
+                        <span class="badge bg-info"><i class="fa fa-picture-o me-1"></i>3 photos</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-dark border-top border-secondary text-center py-3 mt-auto">
+        <small class="text-secondary">&copy; 2025 Photo Gallery &mdash; IISSI-2 University of Seville</small>
+    </footer>
+
+    <script>
+        include("header.html", "#page-header");
+    </script>
+    <script type="module" src="js/renderers/sessionNav.js"></script>
+</body>
+</html>

@@ -1,75 +1,116 @@
 <!DOCTYPE html>
-<html lang="es-ES">
+<html lang="es-ES" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gallery - Register</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/utils/include.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="/js/libs/bootstrap.min.js"></script>
+    <script src="js/utils/include.js"></script>
 </head>
-<body class="dark">
+<body class="bg-dark text-light min-vh-100 d-flex flex-column">
 
     <div id="page-header"></div>
 
-    <h2 class="text">Registrar un nuevo usuario:</h2>
-    <p><a class="text" href="index.html">Home</a>    <a href="login.html">Login</a></p>
-    <div>
+    <main class="container py-5 flex-grow-1 d-flex align-items-center justify-content-center">
+        <div class="auth-card w-100 fade-in-up">
+            <div class="card bg-dark border-secondary shadow">
+                <div class="card-body p-4">
+                    <h3 class="card-title text-center mb-4">
+                        <i class="fa fa-user-plus me-2"></i>Register
+                    </h3>
 
-        <form>
-        <div class="input-group">
-            <label class="text" for="firstname-input">First name:</label>
-            <input type="text" id="firstname-input" name="firstName" required>
-        </div>
+                    <div id="errors"></div>
 
-        <div class="input-group">
-            <label class="text" for="lastname-input">Last name:</label>
-            <input type="text" id="lastname-input" name="lastName" required>
-        </div>
+                    <form id="register-form" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstname-input" class="form-label">First name</label>
+                                <input type="text" class="form-control bg-dark text-light border-secondary"
+                                       id="firstname-input" name="firstName" placeholder="John" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastname-input" class="form-label">Last name</label>
+                                <input type="text" class="form-control bg-dark text-light border-secondary"
+                                       id="lastname-input" name="lastName" placeholder="Doe" required>
+                            </div>
+                        </div>
 
-        <div class="input-group">
-            <label class="text" for="email-input">Email:</label>
-            <input type="email" id="email-input" name="email" required>
-        </div>
+                        <div class="mb-3">
+                            <label for="email-input" class="form-label">Email</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-secondary border-secondary">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                                <input type="email" class="form-control bg-dark text-light border-secondary"
+                                       id="email-input" name="email" placeholder="you@example.com" required>
+                            </div>
+                        </div>
 
-        <div class="input-group">
-            <label class="text" for="telephone-input">Telephone:</label>
-            <select name="prefix" id="prefix-input">
-            <option value="34">Spain (+34)</option>
-            <option value="1">USA (+1)</option>
-            <option value="other">Other</option>
-            </select>
-            <input type="text" id="telephone-input" name="telephone" required>
-        </div>
+                        <div class="mb-3">
+                            <label for="telephone-input" class="form-label">Telephone</label>
+                            <div class="input-group">
+                                <select id="prefix-input" name="prefix"
+                                        class="form-select bg-dark text-light border-secondary" style="max-width:130px;">
+                                    <option value="34" selected>🇪🇸 +34</option>
+                                    <option value="1">🇺🇸 +1</option>
+                                    <option value="44">🇬🇧 +44</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <input type="text" class="form-control bg-dark text-light border-secondary"
+                                       id="telephone-input" name="telephone" placeholder="612345678" required>
+                            </div>
+                        </div>
 
-        <div class="input-group">
-            <label class="text" for="username-input">Username:</label>
-            <input type="text" id="username-input" name="username" required>
-        </div>
+                        <div class="mb-3">
+                            <label for="username-input" class="form-label">Username</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-secondary border-secondary">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                <input type="text" class="form-control bg-dark text-light border-secondary"
+                                       id="username-input" name="username" placeholder="Choose a username" required>
+                            </div>
+                        </div>
 
-        <div class="input-group">
-            <label class="text" for="password-input">Password:</label>
-            <input type="password" id="password-input" name="password" required>
-        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="password-input" class="form-label">Password</label>
+                                <input type="password" class="form-control bg-dark text-light border-secondary"
+                                       id="password-input" name="password" placeholder="Password" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="password2-input" class="form-label">Repeat password</label>
+                                <input type="password" class="form-control bg-dark text-light border-secondary"
+                                       id="password2-input" name="password2" placeholder="Repeat password" required>
+                            </div>
+                        </div>
 
-        <div class="input-group">
-            <label class="text" for="password2-input">Repeat your password:</label>
-            <input type="password" id="password2-input" name="password2" required>
-        </div>
+                        <button type="submit" class="btn btn-success w-100 mb-3">
+                            <i class="fa fa-user-plus me-1"></i>Create account
+                        </button>
 
-        <div class="input-group">
-            <input type="submit">
+                        <p class="text-center text-secondary mb-0">
+                            Already have an account?
+                            <a href="login.html" class="text-decoration-none">Log in</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
         </div>
-        </form>
-    </div>
+    </main>
+
+    <footer class="bg-dark border-top border-secondary text-center py-3 mt-auto">
+        <small class="text-secondary">&copy; 2025 Photo Gallery &mdash; IISSI-2 University of Seville</small>
+    </footer>
 
     <script>
         include("header.html", "#page-header");
     </script>
-
+    <script type="module" src="js/handlers/register.js"></script>
+    <script type="module" src="js/renderers/sessionNav.js"></script>
 </body>
 </html>

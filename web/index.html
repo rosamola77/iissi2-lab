@@ -1,131 +1,134 @@
 <!DOCTYPE html>
-<html lang="es-ES">
+<html lang="es-ES" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gallery - Home</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/utils/include.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="/js/libs/bootstrap.min.js"></script>
+    <script src="js/utils/include.js"></script>
 </head>
-<body class="dark">
+<body class="bg-dark text-light min-vh-100 d-flex flex-column">
 
     <div id="page-header"></div>
 
-    <h2 class="text">Recent pictures</h2>
-    <a class="text" href="upload_picture.html">Upload a new picture</a>
-
-
-
-    <div class="gallery-container">
-        <div class="photo-block">
-            <div class="photo-header-block">
-                <h2 class="text">Samoyed</h2>
-                <h3 class="text">Score: 4.52</h3>
-            </div>
-
-            <div class="photo-image-block">
-                <img class="photo-image" src="https://i.ibb.co/tY1Jcnc/wlZCfCv.jpg" alt="White and hairy dog">
-            </div>
-
-            <div class="photo-metadata-block">
-                <p class="photo-description">A very good boy.</p>
-            </div>
-
-            <div class="photo-edit-block">
-                <button>Edit</button>
-                <button>Delete</button>
-            </div>
+    <main class="container py-4 flex-grow-1">
+        <div class="d-flex justify-content-between align-items-center mb-4 fade-in-up">
+            <h2 class="fw-bold mb-0"><i class="fa fa-picture-o me-2"></i>Recent pictures</h2>
+            <a class="btn btn-outline-primary" href="upload_picture.html">
+                <i class="fa fa-plus me-1"></i>Upload photo
+            </a>
         </div>
 
-        <div class="photo-block">
-            <div class="photo-header-block">
-                <h2 class="text">Knegro</h2>
-                <h3 class="text">Score: 6.7</h3>
+        <div id="errors"></div>
+
+        <!-- Photo gallery grid rendered by JS; fallback static cards below -->
+        <div id="gallery" class="row g-4">
+
+            <div class="col-md-6 col-lg-4 gallery-card fade-in-up">
+                <div class="card bg-dark border-secondary h-100">
+                    <img src="https://i.ibb.co/tY1Jcnc/wlZCfCv.jpg" class="card-img-top photo-img" alt="Samoyed">
+                    <div class="card-body">
+                        <h5 class="card-title">Samoyed</h5>
+                        <span class="badge bg-primary badge-score">Score: +3</span>
+                        <p class="card-text text-secondary mt-2">A very good boy.</p>
+                    </div>
+                    <div class="card-footer border-secondary d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-warning flex-grow-1"><i class="fa fa-pencil me-1"></i>Edit</button>
+                        <button class="btn btn-sm btn-outline-danger flex-grow-1"><i class="fa fa-trash me-1"></i>Delete</button>
+                    </div>
+                </div>
             </div>
 
-            <div class="photo-image-block">
-                <img class="photo-image" src="images/Knegro.png" alt="Knegro">
+            <div class="col-md-6 col-lg-4 gallery-card fade-in-up">
+                <div class="card bg-dark border-secondary h-100">
+                    <img src="https://comidasespanolas.com/wp-content/uploads/2019/12/Receta-de-tortilla-espa%C3%B1ola-tradicional.jpg" class="card-img-top photo-img" alt="Tortilla">
+                    <div class="card-body">
+                        <h5 class="card-title">Tortilla</h5>
+                        <span class="badge bg-primary badge-score">Score: +3</span>
+                        <p class="card-text text-secondary mt-2">A typical Spanish tortilla. With onion, of course.</p>
+                    </div>
+                    <div class="card-footer border-secondary d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-warning flex-grow-1"><i class="fa fa-pencil me-1"></i>Edit</button>
+                        <button class="btn btn-sm btn-outline-danger flex-grow-1"><i class="fa fa-trash me-1"></i>Delete</button>
+                    </div>
+                </div>
             </div>
 
-            <div class="photo-metadata-block">
-                <p class="photo-description">Knegro</p>
+            <div class="col-md-6 col-lg-4 gallery-card fade-in-up">
+                <div class="card bg-dark border-secondary h-100">
+                    <img src="https://pbs.twimg.com/media/Ea4HJNaXsAEbzzF?format=jpg&name=900x900" class="card-img-top photo-img" alt="Coding in C#">
+                    <div class="card-body">
+                        <h5 class="card-title">Coding in C#</h5>
+                        <span class="badge bg-danger badge-score">Score: -2</span>
+                        <p class="card-text text-secondary mt-2">A piece of very intricate code.</p>
+                    </div>
+                    <div class="card-footer border-secondary d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-warning flex-grow-1"><i class="fa fa-pencil me-1"></i>Edit</button>
+                        <button class="btn btn-sm btn-outline-danger flex-grow-1"><i class="fa fa-trash me-1"></i>Delete</button>
+                    </div>
+                </div>
             </div>
 
-            <div class="photo-edit-block">
-                <button>Edit</button>
-                <button>Delete</button>
+            <div class="col-md-6 col-lg-4 gallery-card fade-in-up">
+                <div class="card bg-dark border-secondary h-100">
+                    <img src="https://pbs.twimg.com/media/Eeeb3R0VAAAiVCp.jpg" class="card-img-top photo-img" alt="The future society">
+                    <div class="card-body">
+                        <h5 class="card-title">The future society</h5>
+                        <span class="badge bg-primary badge-score">Score: +1</span>
+                        <p class="card-text text-secondary mt-2">This is what society would look like if PHP didn't exist.</p>
+                    </div>
+                    <div class="card-footer border-secondary d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-warning flex-grow-1"><i class="fa fa-pencil me-1"></i>Edit</button>
+                        <button class="btn btn-sm btn-outline-danger flex-grow-1"><i class="fa fa-trash me-1"></i>Delete</button>
+                    </div>
+                </div>
             </div>
+
+            <div class="col-md-6 col-lg-4 gallery-card fade-in-up">
+                <div class="card bg-dark border-secondary h-100">
+                    <img src="https://pbs.twimg.com/media/EZ4Z2QDUYAANA-Z?format=png" class="card-img-top photo-img" alt="Comfy cat">
+                    <div class="card-body">
+                        <h5 class="card-title">Comfy cat</h5>
+                        <span class="badge bg-primary badge-score">Score: +2</span>
+                        <p class="card-text text-secondary mt-2">A drawing of a cat about to sleep.</p>
+                    </div>
+                    <div class="card-footer border-secondary d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-warning flex-grow-1"><i class="fa fa-pencil me-1"></i>Edit</button>
+                        <button class="btn btn-sm btn-outline-danger flex-grow-1"><i class="fa fa-trash me-1"></i>Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 gallery-card fade-in-up">
+                <div class="card bg-dark border-secondary h-100">
+                    <img src="https://urbansevilla.es/wp-content/uploads/2019/03/urban-sevilla-foto-ciudad.jpg" class="card-img-top photo-img" alt="Seville">
+                    <div class="card-body">
+                        <h5 class="card-title">Seville</h5>
+                        <span class="badge bg-primary badge-score">Score: +1</span>
+                        <p class="card-text text-secondary mt-2">The beautiful city of Seville, Spain.</p>
+                    </div>
+                    <div class="card-footer border-secondary d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-warning flex-grow-1"><i class="fa fa-pencil me-1"></i>Edit</button>
+                        <button class="btn btn-sm btn-outline-danger flex-grow-1"><i class="fa fa-trash me-1"></i>Delete</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </main>
 
-        <div class="photo-block">
-            <div class="photo-header-block">
-                <h2 class="text">Hora de LoL</h2>
-                <h3 class="text">Score: 7.5</h3>
-            </div>
-
-            <div class="photo-image-block">
-                <img class="photo-image" src="images/Lol.png" alt="Conejo con un reloj que muestra el logo del lol">
-            </div>
-
-            <div class="photo-metadata-block">
-                <p class="photo-description">Nos echamos un lol?</p>
-            </div>
-
-            <div class="photo-edit-block">
-                <button>Edit</button>
-                <button>Delete</button>
-            </div>
-        </div>
-
-        <div class="photo-block">
-            <div class="photo-header-block">
-                <h2 class="text">Corta</h2>
-                <h3 class="text">Score: 8.69</h3>
-            </div>
-
-            <div class="photo-image-block">
-                <img class="photo-image" src="images/Timeout.jpg" alt="Shaq timeout meme">
-            </div>
-
-            <div class="photo-metadata-block">
-                <p class="photo-description">Corta bro, corta.</p>
-            </div>
-
-            <div class="photo-edit-block">
-                <button>Edit</button>
-                <button>Delete</button>
-            </div>
-        </div>
-
-        <div class="photo-block">
-            <div class="photo-header-block">
-                <h2 class="text">Somos</h2>
-                <h3 class="text">Score: 9.9</h3>
-            </div>
-
-            <div class="photo-image-block">
-                <img class="photo-image" src="images/Kirk.jpeg" alt="Kirk and I can't breathe meme">
-            </div>
-
-            <div class="photo-metadata-block">
-                <p class="photo-description">Carlos Kirk, llevamos la llama</p>
-            </div>
-
-            <div class="photo-edit-block">
-                <button>Edit</button>
-                <button>Delete</button>
-            </div>
-        </div>
-    </div>
+    <footer class="bg-dark border-top border-secondary text-center py-3 mt-auto">
+        <small class="text-secondary">&copy; 2025 Photo Gallery &mdash; IISSI-2 University of Seville</small>
+    </footer>
 
     <script>
         include("header.html", "#page-header");
     </script>
-
+    <script type="module" src="js/renderers/photos.js"></script>
+    <script type="module" src="js/renderers/sessionNav.js"></script>
 </body>
 </html>

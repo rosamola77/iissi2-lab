@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es-ES" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery - Trending Photos</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/js/libs/bootstrap.min.js"></script>
+    <script src="js/utils/include.js"></script>
+</head>
+<body class="bg-dark text-light min-vh-100 d-flex flex-column">
+
+    <div id="page-header"></div>
+
+    <main class="container py-4 flex-grow-1">
+        <h2 class="fw-bold mb-4 fade-in-up">
+            <i class="fa fa-fire text-warning me-2"></i>Trending Photos
+        </h2>
+
+        <div id="errors"></div>
+
+        <div id="trending-photos" class="row g-4">
+            <!-- Rendered dynamically by JS; fallback cards below -->
+
+            <div class="col-md-6 col-lg-4 gallery-card fade-in-up">
+                <div class="card bg-dark border-secondary h-100">
+                    <img src="https://i.ibb.co/tY1Jcnc/wlZCfCv.jpg" class="card-img-top photo-img" alt="Samoyed">
+                    <div class="card-body">
+                        <h5 class="card-title">Samoyed</h5>
+                        <span class="badge bg-success badge-score"><i class="fa fa-thumbs-up me-1"></i>+3</span>
+                        <p class="card-text text-secondary mt-2">A very fluffy dog.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 gallery-card fade-in-up">
+                <div class="card bg-dark border-secondary h-100">
+                    <img src="https://comidasespanolas.com/wp-content/uploads/2019/12/Receta-de-tortilla-espa%C3%B1ola-tradicional.jpg" class="card-img-top photo-img" alt="Tortilla">
+                    <div class="card-body">
+                        <h5 class="card-title">Tortilla</h5>
+                        <span class="badge bg-success badge-score"><i class="fa fa-thumbs-up me-1"></i>+3</span>
+                        <p class="card-text text-secondary mt-2">A typical Spanish tortilla.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 gallery-card fade-in-up">
+                <div class="card bg-dark border-secondary h-100">
+                    <img src="https://pbs.twimg.com/media/EZ4Z2QDUYAANA-Z?format=png" class="card-img-top photo-img" alt="Comfy cat">
+                    <div class="card-body">
+                        <h5 class="card-title">Comfy cat</h5>
+                        <span class="badge bg-success badge-score"><i class="fa fa-thumbs-up me-1"></i>+2</span>
+                        <p class="card-text text-secondary mt-2">A drawing of a cat about to sleep.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-dark border-top border-secondary text-center py-3 mt-auto">
+        <small class="text-secondary">&copy; 2025 Photo Gallery &mdash; IISSI-2 University of Seville</small>
+    </footer>
+
+    <script>
+        include("header.html", "#page-header");
+    </script>
+    <script type="module" src="js/renderers/sessionNav.js"></script>
+</body>
+</html>

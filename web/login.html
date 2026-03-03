@@ -1,40 +1,75 @@
 <!DOCTYPE html>
-<html lang="es-ES">
+<html lang="es-ES" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery - Login</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/utils/include.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="/js/libs/bootstrap.min.js"></script>
+    <script src="js/utils/include.js"></script>
 </head>
-<body class="dark">
-    
+<body class="bg-dark text-light min-vh-100 d-flex flex-column">
+
     <div id="page-header"></div>
 
-    <div class="center-form">
-        <form>
-            <div class="form-group">
-                <label for="username-input" class="text-light">Username:</label>
-                <input type="text" class="form-control bg-dark text-light" id="username-input" name="username" placeholder="Username">
-            </div>
-            <div class="form-group">
-                <label for="password-input" class="text-light">Password:</label>
-                <input type="password" class="form-control bg-dark text-light" id="password-input" name="password" placeholder="Password">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
+    <main class="container py-5 flex-grow-1 d-flex align-items-center justify-content-center">
+        <div class="auth-card w-100 fade-in-up">
+            <div class="card bg-dark border-secondary shadow">
+                <div class="card-body p-4">
+                    <h3 class="card-title text-center mb-4">
+                        <i class="fa fa-sign-in me-2"></i>Login
+                    </h3>
 
+                    <div id="errors"></div>
 
+                    <form id="login-form" novalidate>
+                        <div class="mb-3">
+                            <label for="username-input" class="form-label">Username</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-secondary border-secondary">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                <input type="text" class="form-control bg-dark text-light border-secondary"
+                                       id="username-input" name="username" placeholder="Enter your username" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="password-input" class="form-label">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-secondary border-secondary">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                                <input type="password" class="form-control bg-dark text-light border-secondary"
+                                       id="password-input" name="password" placeholder="Enter your password" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 mb-3">
+                            <i class="fa fa-sign-in me-1"></i>Log in
+                        </button>
+
+                        <p class="text-center text-secondary mb-0">
+                            Don't have an account?
+                            <a href="register.html" class="text-decoration-none">Register here</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark border-top border-secondary text-center py-3 mt-auto">
+        <small class="text-secondary">&copy; 2025 Photo Gallery &mdash; IISSI-2 University of Seville</small>
+    </footer>
 
     <script>
         include("header.html", "#page-header");
     </script>
-
+    <script type="module" src="js/handlers/login.js"></script>
+    <script type="module" src="js/renderers/sessionNav.js"></script>
 </body>
 </html>

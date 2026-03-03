@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es-ES" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery - Upload Photo</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/js/libs/bootstrap.min.js"></script>
+    <script src="js/utils/include.js"></script>
+</head>
+<body class="bg-dark text-light min-vh-100 d-flex flex-column">
+
+    <div id="page-header"></div>
+
+    <main class="container py-5 flex-grow-1 d-flex align-items-center justify-content-center">
+        <div class="auth-card w-100 fade-in-up">
+            <div class="card bg-dark border-secondary shadow">
+                <div class="card-body p-4">
+                    <h3 class="card-title text-center mb-4">
+                        <i class="fa fa-cloud-upload me-2"></i>Upload a Photo
+                    </h3>
+
+                    <div id="errors"></div>
+
+                    <form id="upload-form" novalidate>
+                        <div class="mb-3">
+                            <label for="title-input" class="form-label">Title</label>
+                            <input type="text" class="form-control bg-dark text-light border-secondary"
+                                   id="title-input" name="title" placeholder="Give your photo a title" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="description-input" class="form-label">Description</label>
+                            <textarea class="form-control bg-dark text-light border-secondary" rows="3"
+                                      id="description-input" name="description"
+                                      placeholder="Describe your photo (optional)"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="url-input" class="form-label">Image URL</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-secondary border-secondary">
+                                    <i class="fa fa-link"></i>
+                                </span>
+                                <input type="url" class="form-control bg-dark text-light border-secondary"
+                                       id="url-input" name="url" placeholder="https://example.com/photo.jpg" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="visibility-input" class="form-label">Visibility</label>
+                            <select class="form-select bg-dark text-light border-secondary"
+                                    id="visibility-input" name="visibility" required>
+                                <option value="Public" selected>Public</option>
+                                <option value="Private">Private</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 mb-3">
+                            <i class="fa fa-upload me-1"></i>Upload photo
+                        </button>
+
+                        <p class="text-center text-secondary mb-0">
+                            <a href="index.html" class="text-decoration-none">
+                                <i class="fa fa-arrow-left me-1"></i>Back to gallery
+                            </a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark border-top border-secondary text-center py-3 mt-auto">
+        <small class="text-secondary">&copy; 2025 Photo Gallery &mdash; IISSI-2 University of Seville</small>
+    </footer>
+
+    <script>
+        include("header.html", "#page-header");
+    </script>
+    <script type="module" src="js/handlers/upload.js"></script>
+    <script type="module" src="js/renderers/sessionNav.js"></script>
+</body>
+</html>
