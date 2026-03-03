@@ -97,6 +97,31 @@
     <script>
         include("header.html", "#page-header");
     </script>
+    <script>
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const img = params.get('img');
+            const title = params.get('title');
+            const desc = params.get('desc');
+            if (img) {
+                const imgEl = document.querySelector('main img.img-fluid');
+                if (imgEl) { imgEl.src = img; imgEl.alt = title || imgEl.alt; }
+            }
+            if (title) {
+                const h3 = document.querySelector('main h3');
+                if (h3) {
+                    const icon = h3.querySelector('i');
+                    h3.textContent = '';
+                    if (icon) h3.appendChild(icon);
+                    h3.appendChild(document.createTextNode(title));
+                }
+            }
+            if (desc) {
+                const h6 = document.querySelector('main h6.text-secondary');
+                if (h6) { h6.textContent = desc; }
+            }
+        })();
+    </script>
     <script type="module" src="js/renderers/sessionNav.js"></script>
 </body>
 </html>
