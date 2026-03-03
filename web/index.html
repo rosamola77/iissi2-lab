@@ -3,12 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Inicio</title>
+    <title>Gallery - Home</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/utils/include.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script src="/js/libs/bootstrap.min.js"></script>
 </head>
-<body>
-    <h1>HOME</h1>
+<body class="dark">
 
-    <p><a href="register.html">Registrarse</a>      <a href="login.html">Login</a></p>
+    <div id="page-header"></div>
+
+    <h2 class="text">Recent pictures</h2>
+    <a class="text" href="upload_picture.html">Upload a new picture</a>
+
+
+
+    <div class="gallery-container">
+        <div class="photo-block">
+            <div class="photo-header-block">
+                <h2 class="text">Samoyed</h2>
+                <h3 class="text">Score: 4.52</h3>
+            </div>
+
+            <div class="photo-image-block">
+                <img class="photo-image" src="https://i.ibb.co/tY1Jcnc/wlZCfCv.jpg" alt="White and hairy dog">
+            </div>
+
+            <div class="photo-metadata-block">
+                <p class="photo-description">A very good boy.</p>
+            </div>
+
+            <div class="photo-edit-block">
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
+        </div>
+
+        <div class="photo-block">
+            <div class="photo-header-block">
+                <h2 class="text">Knegro</h2>
+                <h3 class="text">Score: 6.7</h3>
+            </div>
+
+            <div class="photo-image-block">
+                <img class="photo-image" src="images/Knegro.png" alt="Knegro">
+            </div>
+
+            <div class="photo-metadata-block">
+                <p class="photo-description">Knegro</p>
+            </div>
+
+            <div class="photo-edit-block">
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
+        </div>
+
+        <div class="photo-block">
+            <div class="photo-header-block">
+                <h2 class="text">Hora de LoL</h2>
+                <h3 class="text">Score: 7.5</h3>
+            </div>
+
+            <div class="photo-image-block">
+                <img class="photo-image" src="images/Lol.png" alt="Conejo con un reloj que muestra el logo del lol">
+            </div>
+
+            <div class="photo-metadata-block">
+                <p class="photo-description">Nos echamos un lol?</p>
+            </div>
+
+            <div class="photo-edit-block">
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
+        </div>
+
+        <div class="photo-block">
+            <div class="photo-header-block">
+                <h2 class="text">Corta</h2>
+                <h3 class="text">Score: 8.69</h3>
+            </div>
+
+            <div class="photo-image-block">
+                <img class="photo-image" src="images/Timeout.jpg" alt="Shaq timeout meme">
+            </div>
+
+            <div class="photo-metadata-block">
+                <p class="photo-description">Corta bro, corta.</p>
+            </div>
+
+            <div class="photo-edit-block">
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
+        </div>
+
+        <div class="photo-block">
+            <div class="photo-header-block">
+                <h2 class="text">Somos</h2>
+                <h3 class="text">Score: 9.9</h3>
+            </div>
+
+            <div class="photo-image-block">
+                <img class="photo-image" src="images/Kirk.jpeg" alt="Kirk and I can't breathe meme">
+            </div>
+
+            <div class="photo-metadata-block">
+                <p class="photo-description">Carlos Kirk, llevamos la llama</p>
+            </div>
+
+            <div class="photo-edit-block">
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        include("header.html", "#page-header");
+    </script>
+
 </body>
 </html>

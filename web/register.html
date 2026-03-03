@@ -5,27 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Register</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/utils/include.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script src="/js/libs/bootstrap.min.js"></script>
 </head>
-<body>
-    <p><a href="index.html">Home</a>    <a href="login.html">Login</a></p>
+<body class="dark">
+
+    <div id="page-header"></div>
+
+    <h2 class="text">Registrar un nuevo usuario:</h2>
+    <p><a class="text" href="index.html">Home</a>    <a href="login.html">Login</a></p>
     <div>
-        <form action="/index.html" method="get">
-            <fieldset>
-                <div>
-                    <input type="text" name="Nombre" id="firstName" placeholder="Nombre" required>
-                </div>
-                <div>
-                    <input type="text" name="Apellidos" id="lastName" placeholder="Apellidos" required>
-                </div>
-                <div>
-                    <input type="email" name="email" id="email" placeholder="E-Mail" required>
-                </div>
-                <div>
-                    <input type="password" name="password" id="password" placeholder="Contraseña" required>
-                </div>
-            </fieldset>
-            <input type="submit" value="Enviar">
+
+        <form>
+        <div class="input-group">
+            <label class="text" for="firstname-input">First name:</label>
+            <input type="text" id="firstname-input" name="firstName" required>
+        </div>
+
+        <div class="input-group">
+            <label class="text" for="lastname-input">Last name:</label>
+            <input type="text" id="lastname-input" name="lastName" required>
+        </div>
+
+        <div class="input-group">
+            <label class="text" for="email-input">Email:</label>
+            <input type="email" id="email-input" name="email" required>
+        </div>
+
+        <div class="input-group">
+            <label class="text" for="telephone-input">Telephone:</label>
+            <select name="prefix" id="prefix-input">
+            <option value="34">Spain (+34)</option>
+            <option value="1">USA (+1)</option>
+            <option value="other">Other</option>
+            </select>
+            <input type="text" id="telephone-input" name="telephone" required>
+        </div>
+
+        <div class="input-group">
+            <label class="text" for="username-input">Username:</label>
+            <input type="text" id="username-input" name="username" required>
+        </div>
+
+        <div class="input-group">
+            <label class="text" for="password-input">Password:</label>
+            <input type="password" id="password-input" name="password" required>
+        </div>
+
+        <div class="input-group">
+            <label class="text" for="password2-input">Repeat your password:</label>
+            <input type="password" id="password2-input" name="password2" required>
+        </div>
+
+        <div class="input-group">
+            <input type="submit">
+        </div>
         </form>
     </div>
+
+    <script>
+        include("header.html", "#page-header");
+    </script>
+
 </body>
 </html>
