@@ -1,7 +1,8 @@
 'use strict';
 
 import { sessionManager } from '../utils/session.js';
-import { messageRenderer } from './messages.js';
+
+let logoutListenerAttached = false;
 
 function updateSessionNav() {
     let loggedOut = document.getElementById("nav-logged-out");
@@ -24,7 +25,8 @@ function updateSessionNav() {
         loggedIn.classList.add("d-none");
     }
 
-    if (logoutBtn) {
+    if (logoutBtn && !logoutListenerAttached) {
+        logoutListenerAttached = true;
         logoutBtn.addEventListener("click", function (e) {
             e.preventDefault();
             sessionManager.logout();
@@ -34,5 +36,4 @@ function updateSessionNav() {
 }
 
 document.addEventListener("DOMContentLoaded", updateSessionNav);
-// Also run after a short delay to account for the include() of header.html
 setTimeout(updateSessionNav, 200);

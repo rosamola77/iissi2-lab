@@ -24,9 +24,10 @@ function renderPhotoCard(photo, index) {
     return `
         <div class="col-md-6 col-lg-4 gallery-card fade-in-up" style="animation-delay:${index * 0.07}s">
             <div class="card bg-dark border-secondary h-100">
-                <img src="${photo.url}" class="card-img-top photo-img"
-                     alt="${photo.title}"
-                     onerror="this.src='images/placeholder-img.jpg'">
+                <a href="photo_detail.html">
+                    <img src="${photo.url}" class="card-img-top photo-img"
+                         alt="${photo.title}" data-fallback="images/placeholder-img.jpg">
+                </a>
                 <div class="card-body">
                     <h5 class="card-title">${photo.title}</h5>
                     <span class="badge bg-${photo.visibility === 'Public' ? 'primary' : 'secondary'} me-1">
@@ -49,6 +50,7 @@ async function loadPhotos() {
         if (photos && photos.length > 0) {
             gallery.innerHTML = photos.map((p, i) => renderPhotoCard(p, i)).join('');
             attachDeleteHandlers();
+            attachImageFallbacks();
         }
     } catch (err) {
         // If the API is not available, keep the static fallback cards
@@ -71,6 +73,14 @@ function attachDeleteHandlers() {
                     }
                 }
             }
+        });
+    });
+}
+
+function attachImageFallbacks() {
+    document.querySelectorAll("img[data-fallback]").forEach(img => {
+        img.addEventListener("error", function () {
+            this.src = this.getAttribute("data-fallback");
         });
     });
 }

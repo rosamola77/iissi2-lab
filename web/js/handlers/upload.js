@@ -10,7 +10,9 @@ function handleUpload() {
 
     if (!sessionManager.isLogged()) {
         messageRenderer.showWarningMessage("You must be logged in to upload photos.");
-        form.querySelector('button[type="submit"]').disabled = true;
+        let submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.setAttribute("aria-disabled", "true");
         return;
     }
 
