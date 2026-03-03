@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es-ES" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery - Photo Detail</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/js/libs/bootstrap.min.js"></script>
+    <script src="js/utils/include.js"></script>
+</head>
+<body class="bg-dark text-light min-vh-100 d-flex flex-column">
+
+    <div id="page-header"></div>
+
+    <main class="container py-4 flex-grow-1">
+        <div id="errors"></div>
+
+        <div class="row text-center fade-in-up">
+            <div class="col-md">
+                <h3><i class="fa fa-picture-o me-2"></i>Samoyed</h3>
+                <h6 class="text-secondary">A very fluffy dog</h6>
+                <p>Uploaded by <a href="trending_users.html" class="text-decoration-none">druiz</a>
+                   on <span class="text-secondary">23/04/2013</span></p>
+                <hr class="border-secondary">
+                <img src="https://www.dogsnsw.org.au/media/img/BrowseAllBreed/Samoyed-.jpg"
+                     class="img-fluid rounded shadow fade-in" alt="Samoyed">
+            </div>
+
+            <div class="col-md-3 mt-4 mt-md-0 slide-in-left">
+                <div class="d-grid gap-2 mb-4">
+                    <button class="btn btn-primary"><i class="fa fa-pencil me-1"></i>Edit this photo</button>
+                    <button class="btn btn-danger"><i class="fa fa-trash me-1"></i>Delete this photo</button>
+                </div>
+
+                <hr class="border-secondary">
+
+                <h6 class="mb-3"><i class="fa fa-star me-1 text-warning"></i>Rate this photo</h6>
+                <form id="rate-form">
+                    <div class="mb-3">
+                        <label for="rating-input" class="form-label">Your rating:</label>
+                        <select id="rating-input" name="rating"
+                                class="form-select bg-dark text-light border-secondary">
+                            <option value="1">&#9733;</option>
+                            <option value="2">&#9733;&#9733;</option>
+                            <option value="3" selected>&#9733;&#9733;&#9733;</option>
+                            <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
+                            <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">
+                        <i class="fa fa-check me-1"></i>Rate
+                    </button>
+                </form>
+
+                <hr class="border-secondary">
+
+                <h6 class="mb-2"><i class="fa fa-tags me-1"></i>Tags</h6>
+                <div class="mb-3">
+                    <span class="badge bg-primary me-1 mb-1">photography</span>
+                    <span class="badge bg-primary me-1 mb-1">animals</span>
+                    <span class="badge bg-primary me-1 mb-1">cute</span>
+                </div>
+
+                <h6 class="mb-2"><i class="fa fa-thumbs-up me-1"></i>Score</h6>
+                <span class="badge bg-success fs-6 badge-score">+3</span>
+            </div>
+        </div>
+
+        <hr class="border-secondary mt-4">
+
+        <div class="fade-in-up" style="animation-delay:.2s">
+            <h5><i class="fa fa-comments me-2"></i>Comments</h5>
+            <ul class="list-group list-group-flush mb-3">
+                <li class="list-group-item bg-dark text-light border-secondary">
+                    <strong>agu</strong> <small class="text-secondary">20/08/2015</small>
+                    <p class="mb-0 mt-1">Good boy!</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row text-center mt-4 fade-in-up" style="animation-delay:.3s">
+            <div class="col-md">
+                <a href="index.html" class="btn btn-outline-primary">
+                    <i class="fa fa-arrow-left me-1"></i>Return to the gallery
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark border-top border-secondary text-center py-3 mt-auto">
+        <small class="text-secondary">&copy; 2025 Photo Gallery &mdash; IISSI-2 University of Seville</small>
+    </footer>
+
+    <script>
+        include("header.html", "#page-header");
+    </script>
+    <script type="module" src="js/renderers/sessionNav.js"></script>
+</body>
+</html>
