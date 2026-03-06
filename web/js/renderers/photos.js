@@ -24,7 +24,7 @@ function renderPhotoCard(photo, index) {
     return `
         <div class="col-md-6 col-lg-4 gallery-card fade-in-up" style="animation-delay:${index * 0.07}s">
             <div class="card bg-dark border-secondary h-100">
-                <a href="photo_detail.html">
+                <a href="photo_detail.html?img=${encodeURIComponent(photo.url)}&title=${encodeURIComponent(photo.title)}&desc=${encodeURIComponent(description)}">
                     <img src="${photo.url}" class="card-img-top photo-img"
                          alt="${photo.title}" data-fallback="images/placeholder-img.jpg">
                 </a>
